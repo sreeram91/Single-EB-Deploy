@@ -15,7 +15,7 @@ jobs:
         run: docker-compose version
 
       - name: running docker-compose.yaml file
-        run:  docker-compose up 
+        run:  docker-compose up -d --build
 
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
