@@ -14,8 +14,8 @@ jobs:
       - name: check docker-compose version
         run: docker-compose version
 
-      - name: running docker-compose.yaml file
-        run:  docker-compose -f "docker-compose.yaml" up -d --build
+      - name: building dockerfile
+        run:  docker build -t sreeram91/single-service .
 
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
