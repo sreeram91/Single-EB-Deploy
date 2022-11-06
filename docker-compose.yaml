@@ -1,0 +1,11 @@
+version: '3'
+services:
+  website:
+    build: 
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - /app/node_modules
+      - ./build:/usr/share/nginx/html
+    ports:
+      - '3003:80'
